@@ -59,7 +59,7 @@ class PreProcessingData:
         return self.le.inverse_transform(target)
     
     def getData(self):
-        return self.df_data.as_matrix(),self.df_target
+        return self.df_data.values,self.df_target
     
     def __LabelBalance(self,df,reduce_factor=1):
         df_majority = df[df.Label=='normal']

@@ -5,6 +5,8 @@ from tkinter import *
 import time
 import subprocess
 
+from numpy import var
+
 class Checkbar(Frame):
    def __init__(self, parent=None, picks=[], side=LEFT, anchor=W):
       Frame.__init__(self, parent)
@@ -31,8 +33,8 @@ class radiobar(Frame):
 	def state(self):
 		return map((lambda var: var.get()), self.var)
 
-	def ShowChoice():
-		print(v.get())
+	def ShowChoice(self):
+		print((lambda var: var.get()), self.var)
 
 
 class InterfacePFC:
@@ -44,7 +46,7 @@ class InterfacePFC:
 		self.models = models
 		self.root = Tk()
 		self.root.title("PFC_Facanha_Rebeca")
-		self.root.iconbitmap('eb_icon.ico')
+		#self.root.iconbitmap('eb_icon.ico')
 		Label(self.root, text="Chose the commite classifiers:").pack()
 		self.lng = Checkbar(self.root,self.models )
 		self.lng.pack(side=TOP,  fill=X)
@@ -70,7 +72,7 @@ class InterfacePFC:
 		self.root.mainloop()
 
 	def results(self):
-		path="C:\\Users\\Yuri\\Documents\\GitHub\\PFC\\Results"
+		path="C:\\Users\\gusta\\Desktop\\IME\\PFC\\EB-Cyber-Def-Facanha\\Results"
 		path=os.path.realpath(path)
 		os.startfile(path)
 

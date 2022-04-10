@@ -7,12 +7,6 @@ from sklearn.naive_bayes import GaussianNB
 from sklearn.model_selection import StratifiedKFold
 from  sklearn.neural_network import MLPClassifier
 import numpy as np 
-from sklearn.datasets import load_iris
-
-iris = load_iris()
-XX = iris.data
-YY = iris.target
-
 
 class Classifier(object):
     def __init__(self,data=None,target=None):
