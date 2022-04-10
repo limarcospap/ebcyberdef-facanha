@@ -1,0 +1,67 @@
+
+Results:
+----iteration 1----
+SVM => 100.00% - 4.36% - 82.89%
+Perceptron => 0.00% - 100.00% - 17.89%
+NaiveBayes => 79.17% - 44.97% - 73.05%
+Vot_referee => 79.17% - 47.99% - 73.59%
+Clf_referee => 97.95% - 67.11% - 92.44%
+
+
+Results:
+----iteration 2----
+SVM => 99.93% - 4.03% - 82.77%
+Perceptron => 0.00% - 100.00% - 17.89%
+NaiveBayes => 78.87% - 42.28% - 72.33%
+Vot_referee => 78.80% - 45.30% - 72.81%
+Clf_referee => 98.39% - 61.74% - 91.84%
+
+
+Results:
+----iteration 3----
+SVM => 100.00% - 5.70% - 83.13%
+Perceptron => 0.00% - 100.00% - 17.89%
+NaiveBayes => 78.80% - 39.93% - 71.85%
+Vot_referee => 78.80% - 43.62% - 72.51%
+Clf_referee => 98.32% - 64.77% - 92.32%
+
+
+Results:
+----iteration 4----
+SVM => 100.00% - 4.03% - 82.82%
+Perceptron => 0.00% - 100.00% - 17.90%
+NaiveBayes => 78.20% - 43.29% - 71.95%
+Vot_referee => 78.20% - 45.64% - 72.37%
+Clf_referee => 98.24% - 61.07% - 91.59%
+
+
+Results:
+----iteration 5----
+SVM => 100.00% - 4.71% - 82.99%
+Perceptron => 0.00% - 100.00% - 17.85%
+NaiveBayes => 78.79% - 40.07% - 71.88%
+Vot_referee => 78.79% - 43.10% - 72.42%
+Clf_referee => 98.76% - 60.94% - 92.01%
+
+
+Averages:
+====SVM==== 
+total: 82.92%
+bot: 99.99%
+normal: 4.57%
+====Perceptron==== 
+total: 17.88%
+bot: 0.00%
+normal: 100.00%
+====NaiveBayes==== 
+total: 72.21%
+bot: 78.77%
+normal: 42.11%
+====Vot_referee==== 
+total: 72.74%
+bot: 78.75%
+normal: 45.13%
+====Clf_referee==== 
+total: 92.04%
+bot: 98.33%
+normal: 63.13%

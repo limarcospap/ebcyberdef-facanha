@@ -1,0 +1,49 @@
+
+Results:
+----iteration 1----
+KNN => 97.95% - 67.11% - 92.44%
+Vot_referee => 97.95% - 67.11% - 92.44%
+Clf_referee => 97.88% - 72.48% - 93.34%
+
+
+Results:
+----iteration 2----
+KNN => 98.39% - 61.74% - 91.84%
+Vot_referee => 98.39% - 61.74% - 91.84%
+Clf_referee => 98.32% - 70.13% - 93.28%
+
+
+Results:
+----iteration 3----
+KNN => 98.32% - 64.77% - 92.32%
+Vot_referee => 98.32% - 64.77% - 92.32%
+Clf_referee => 97.95% - 73.83% - 93.64%
+
+
+Results:
+----iteration 4----
+KNN => 98.24% - 61.07% - 91.59%
+Vot_referee => 98.24% - 61.07% - 91.59%
+Clf_referee => 98.17% - 65.77% - 92.37%
+
+
+Results:
+----iteration 5----
+KNN => 98.76% - 60.94% - 92.01%
+Vot_referee => 98.76% - 60.94% - 92.01%
+Clf_referee => 98.68% - 69.02% - 93.39%
+
+
+Averages:
+====KNN==== 
+total: 92.04%
+bot: 98.33%
+normal: 63.13%
+====Vot_referee==== 
+total: 92.04%
+bot: 98.33%
+normal: 63.13%
+====Clf_referee==== 
+total: 93.20%
+bot: 98.20%
+normal: 70.25%

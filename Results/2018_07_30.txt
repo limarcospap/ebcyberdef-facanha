@@ -1,0 +1,58 @@
+
+Results:
+----iteration 1----
+KNN => 90.39%
+DecisionTree => 89.88%
+SVM => 84.12%
+NaiveBayes => 81.43%
+Vot_referee => 83.90%
+Clf_referee => 90.39%
+
+
+Results:
+----iteration 2----
+KNN => 90.53%
+DecisionTree => 90.36%
+SVM => 83.74%
+NaiveBayes => 81.43%
+Vot_referee => 83.47%
+Clf_referee => 90.53%
+
+
+Results:
+----iteration 3----
+KNN => 90.66%
+DecisionTree => 90.42%
+SVM => 84.26%
+NaiveBayes => 81.41%
+Vot_referee => 83.88%
+Clf_referee => 90.66%
+
+
+Results:
+----iteration 4----
+KNN => 91.02%
+DecisionTree => 90.53%
+SVM => 83.66%
+NaiveBayes => 81.43%
+Vot_referee => 83.22%
+Clf_referee => 91.02%
+
+
+Results:
+----iteration 5----
+KNN => 90.77%
+DecisionTree => 90.96%
+SVM => 83.93%
+NaiveBayes => 81.43%
+Vot_referee => 83.60%
+Clf_referee => 90.77%
+
+
+Averages:
+KNN => 90.67%
+DecisionTree => 90.43%
+SVM => 83.94%
+NaiveBayes => 81.43%
+Vot_referee => 83.61%
+Clf_referee => 90.67%

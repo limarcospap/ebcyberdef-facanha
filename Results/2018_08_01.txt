@@ -1,0 +1,85 @@
+
+Results:
+----iteration 1----
+KNN => 69.85% - 97.97% - 92.75%
+DecisionTree => 66.89% - 95.87% - 90.49%
+SVM => 74.67% - 97.52% - 93.27%
+NaiveBayes => 20.98% - 81.67% - 70.40%
+Perceptron => 55.92% - 84.80% - 79.44%
+Vot_referee => 69.15% - 98.07% - 92.70%
+Clf_referee => 83.41% - 97.00% - 94.48%
+
+
+Results:
+----iteration 2----
+KNN => 70.25% - 98.08% - 92.92%
+DecisionTree => 66.23% - 96.06% - 90.52%
+SVM => 74.93% - 97.09% - 92.98%
+NaiveBayes => 21.49% - 81.29% - 70.19%
+Perceptron => 60.86% - 56.79% - 57.55%
+Vot_referee => 70.91% - 97.93% - 92.92%
+Clf_referee => 82.46% - 97.16% - 94.43%
+
+
+Results:
+----iteration 3----
+KNN => 70.60% - 98.02% - 92.94%
+DecisionTree => 66.36% - 96.17% - 90.63%
+SVM => 73.49% - 97.03% - 92.66%
+NaiveBayes => 22.16% - 82.50% - 71.30%
+Perceptron => 49.58% - 86.72% - 79.83%
+Vot_referee => 67.06% - 98.08% - 92.32%
+Clf_referee => 81.65% - 97.11% - 94.24%
+
+
+Results:
+----iteration 4----
+KNN => 69.14% - 97.69% - 92.39%
+DecisionTree => 67.75% - 95.73% - 90.54%
+SVM => 73.24% - 97.12% - 92.68%
+NaiveBayes => 20.69% - 81.71% - 70.38%
+Perceptron => 50.60% - 84.43% - 78.15%
+Vot_referee => 66.36% - 97.93% - 92.07%
+Clf_referee => 81.86% - 96.78% - 94.01%
+
+
+Results:
+----iteration 5----
+KNN => 70.20% - 98.06% - 92.89%
+DecisionTree => 67.53% - 95.57% - 90.36%
+SVM => 73.82% - 97.02% - 92.72%
+NaiveBayes => 20.99% - 82.16% - 70.80%
+Perceptron => 52.91% - 85.05% - 79.08%
+Vot_referee => 68.26% - 98.00% - 92.48%
+Clf_referee => 82.27% - 97.11% - 94.35%
+
+
+Averages:
+====KNN==== 
+total: 92.78%
+bot: 70.01%
+back: 97.97%
+====DecisionTree==== 
+total: 90.51%
+bot: 66.95%
+back: 95.88%
+====SVM==== 
+total: 92.86%
+bot: 74.03%
+back: 97.16%
+====NaiveBayes==== 
+total: 70.61%
+bot: 21.26%
+back: 81.86%
+====Perceptron==== 
+total: 74.81%
+bot: 53.97%
+back: 79.56%
+====Vot_referee==== 
+total: 92.50%
+bot: 68.35%
+back: 98.00%
+====Clf_referee==== 
+total: 94.30%
+bot: 82.33%
+back: 97.03%
