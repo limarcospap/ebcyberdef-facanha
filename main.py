@@ -1,6 +1,7 @@
 from sanic import Sanic
 from sanic.response import json
 from Evaluate import RefereeFunctions
+import json as js
 
 
 app = Sanic("hello_example")
@@ -11,6 +12,13 @@ refereeEvaluate = RefereeFunctions()
 @app.route("/")
 async def test(request):
   return json({"hello": "world"})
+
+@app.route("/json", methods=["POST",])
+async def postJson(request):
+  newFlow = js.loads(request.json['Flow'])
+  #tratar o fluxo recebido -> tirar as colunas que não são usadas no modelo
+  refereePrediction = refereeEvaluate.RefereePredict(newFlow)
+  return json({ "received": True, "Flow": newFlow, "Referee Prediction": str(refereePrediction)})
 
 @app.route("/test")
 async def predictReferee(request):
