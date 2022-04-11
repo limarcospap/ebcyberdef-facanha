@@ -15,7 +15,7 @@ async def test(request):
 @app.route("/test")
 async def predictReferee(request):
   flow = [[139310, 18.1029, 0, 0, 2, 40, 75, 0, 1, 0, 1]]
-  return json({"Referee Predictions": str(refereeEvaluate.RefereePredict(flow))})
+  return json({"Flow": str(flow[0]), "Referee Predictions": str(refereeEvaluate.RefereePredict(flow))})
 
 if __name__ == "__main__":
   app.run(host="0.0.0.0", port=8000)
