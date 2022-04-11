@@ -59,6 +59,8 @@ class PreProcessingData:
         return self.le.inverse_transform(target)
     
     def getData(self):
+        print(self.df_data.columns)
+        print(self.df_target)
         return self.df_data.values,self.df_target
     
     def __LabelBalance(self,df,reduce_factor=1):
@@ -75,7 +77,7 @@ class PreProcessingData:
                                          random_state=123)
         
         df_downsampled = pd.concat([df_majority_downsampled, df_minority_downsampled])
-        print(df_downsampled.Label.value_counts())
+        #print(df_downsampled.Label.value_counts())
         
         df_target = df_downsampled['Label']
         df_downsampled.drop('Label',axis=1,inplace=True)

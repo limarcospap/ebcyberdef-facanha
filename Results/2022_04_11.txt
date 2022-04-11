@@ -1,0 +1,49 @@
+
+Results:
+----iteration 1----
+DecisionTree => 96.35% - 84.90% - 94.30%
+Vot_referee => 96.35% - 84.90% - 94.30%
+Clf_referee => 96.27% - 84.90% - 94.24%
+
+
+Results:
+----iteration 2----
+DecisionTree => 96.35% - 85.23% - 94.36%
+Vot_referee => 96.35% - 85.23% - 94.36%
+Clf_referee => 96.35% - 85.23% - 94.36%
+
+
+Results:
+----iteration 3----
+DecisionTree => 96.42% - 81.54% - 93.75%
+Vot_referee => 96.42% - 81.54% - 93.75%
+Clf_referee => 96.20% - 82.21% - 93.69%
+
+
+Results:
+----iteration 4----
+DecisionTree => 95.98% - 82.21% - 93.51%
+Vot_referee => 95.98% - 82.21% - 93.51%
+Clf_referee => 95.98% - 82.21% - 93.51%
+
+
+Results:
+----iteration 5----
+DecisionTree => 96.20% - 81.48% - 93.57%
+Vot_referee => 96.20% - 81.48% - 93.57%
+Clf_referee => 96.20% - 81.48% - 93.57%
+
+
+Averages:
+====DecisionTree==== 
+total: 93.90%
+bot: 96.26%
+normal: 83.07%
+====Vot_referee==== 
+total: 93.90%
+bot: 96.26%
+normal: 83.07%
+====Clf_referee==== 
+total: 93.88%
+bot: 96.20%
+normal: 83.21%
