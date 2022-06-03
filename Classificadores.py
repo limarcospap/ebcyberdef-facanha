@@ -22,7 +22,7 @@ class Classifier(object):
         return self.model.predict(testData)
     
     def predict_proba(self,testData):
-        return self.model.predict_proba(testData)
+        return self.model.predict_proba(testData) #acho que da pra usar isso
     
     def score(self,testData,targetData):
         return self.model.score(testData,targetData)
@@ -54,13 +54,14 @@ class SVM_Classifier(Classifier):
         super().__init__()
         Classifier.__init__(self,data,target)
         self.name = "SVM"
-        self.model = SVC(C = 100, kernel = 'rbf', gamma = 0.0001)
-        self.individualEvaluate_model = SVC(C = 100, kernel = 'rbf', gamma = 0.0001)
+        self.model = SVC(C = 100, kernel = 'rbf', gamma = 0.0001, probability=True)
+        self.individualEvaluate_model = SVC(C = 100, kernel = 'rbf', gamma = 0.0001, probability=True)
 
-    def set_params(self, kernel = 'rbf', gamma = 1, C = 0.1):
+    def set_params(self, kernel = 'rbf', gamma = 1, C = 0.1, probability=True):
         self.model.C = C
         self.model.gamma = gamma
         self.model.kernel = kernel
+        self.model.probability = probability
 
 
 class NaiveBayes_Classifier(Classifier):

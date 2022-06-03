@@ -1,6 +1,7 @@
 import pandas as pd 
 from sklearn import preprocessing
 from sklearn.utils import resample
+from sqlalchemy import false
 pd.options.mode.chained_assignment = None
 
 class PreProcessingData:
@@ -10,8 +11,9 @@ class PreProcessingData:
         
         
     def __getCSV(self):
-        df = pd.read_csv('bitnetflowNormal.csv')
-        return df 
+        df = pd.read_csv('bitnetflowNormal.csv', index_col=[0])
+        print(df.columns)
+        return df
     
     #função que gera novamente (ou pela primeira vez) os dados preprocessados
     def generateData(self,reduce_factor=1):
@@ -39,6 +41,8 @@ class PreProcessingData:
         df.drop('State',axis=1,inplace=True)
         
         #balanceamento de classes
+
+        print(df.columns)
         
         self.df_data,self.df_target=self.__LabelBalance(df,reduce_factor)
         
