@@ -12,7 +12,6 @@ class PreProcessingData:
         
     def __getCSV(self):
         df = pd.read_csv('bitnetflowNormal.csv', index_col=[0])
-        print(df.columns)
         return df
     
     #função que gera novamente (ou pela primeira vez) os dados preprocessados
@@ -41,8 +40,6 @@ class PreProcessingData:
         df.drop('State',axis=1,inplace=True)
         
         #balanceamento de classes
-
-        print(df.columns)
         
         self.df_data,self.df_target=self.__LabelBalance(df,reduce_factor)
         
@@ -57,14 +54,11 @@ class PreProcessingData:
         self.df_target = self.le.transform(self.df_target)
         # 0->bot
         # 1->normal
-        print(list(self.le.inverse_transform([0, 1])))
         
     def LabelDecoder(self,target):
         return self.le.inverse_transform(target)
     
     def getData(self):
-        print(self.df_data.columns)
-        print(self.df_target)
         return self.df_data.values,self.df_target
     
     def __LabelBalance(self,df,reduce_factor=1):
@@ -81,7 +75,6 @@ class PreProcessingData:
                                          random_state=123)
         
         df_downsampled = pd.concat([df_majority_downsampled, df_minority_downsampled])
-        #print(df_downsampled.Label.value_counts())
         
         df_target = df_downsampled['Label']
         df_downsampled.drop('Label',axis=1,inplace=True)

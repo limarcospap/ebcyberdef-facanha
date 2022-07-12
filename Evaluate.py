@@ -36,23 +36,16 @@ class RefereeFunctions():
         ref_clf = r.ExecuteReferee(data,target,self.clfs,self.ref_clf)
         return ref_clf
 
-    def GetSusLabel(proba):
-        pass
-
     def RefereePredict(self, newNetworkFlow):
         classifiers = self.clfs
-        print(classifiers)
         #gerar os dados para o referee
         test_predict=[]
         for clf in classifiers:
             predicted=clf.predict(newNetworkFlow)
-            print(clf.predict_proba(newNetworkFlow))
             test_predict.append(predicted)
         
         test_predict = np.array(np.matrix(test_predict).transpose())
         flowToPredict = np.concatenate ((newNetworkFlow,test_predict),axis=1)
-
-        print(flowToPredict)
 
         classif = self.referee.predict(flowToPredict)
         proba = self.referee.predict_proba(flowToPredict)
@@ -61,10 +54,10 @@ class RefereeFunctions():
         for i in range(0,len(proba)):
             proba_bot = proba[i][0]
             proba_normal = proba[i][1]
-            print([proba_bot,proba_normal])
+            # 0->bot
+            # 1->normal
+            # 2->sus
             ref_classif.append(2 if abs(proba_bot-proba_normal) < threshold else classif[i])
-
-        print(type(ref_classif))
 
         return ref_classif
 
