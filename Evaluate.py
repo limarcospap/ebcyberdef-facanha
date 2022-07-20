@@ -8,14 +8,14 @@ import sys
 
 models = ['DT', 'SVM', 'KNN', 'MLP','NB']
 mod = [1,1,1,1,1] # to selecionando só o DT
-threshold = 0.15
+threshold = 0.2
 
 class RefereeFunctions():
     def __init__(self):
         self.strA = mod
         self.strB = 3
         self.prep = ProcessingData.PreProcessingData()
-        self.prep.generateData(reduce_factor=20)
+        self.prep.generateData(reduce_factor=10)
         self.data, self.target = self.prep.getData()
         self.r = Referee()
         self.committe_models  = self.strA #é uma lista com 1 pra cada modelo
@@ -41,7 +41,7 @@ class RefereeFunctions():
         #gerar os dados para o referee
         test_predict=[]
         for clf in classifiers:
-            predicted=clf.predict(newNetworkFlow)
+            predicted=[np.int32(clf.predict(newNetworkFlow)[0]).item()]
             test_predict.append(predicted)
         
         test_predict = np.array(np.matrix(test_predict).transpose())
@@ -49,7 +49,7 @@ class RefereeFunctions():
 
         classif = self.referee.predict(flowToPredict)
         proba = self.referee.predict_proba(flowToPredict)
-        ref_classif = []
+        ref_classif = ([],[])
 
         for i in range(0,len(proba)):
             proba_bot = proba[i][0]
@@ -57,7 +57,8 @@ class RefereeFunctions():
             # 0->bot
             # 1->normal
             # 2->sus
-            ref_classif.append(2 if abs(proba_bot-proba_normal) < threshold else classif[i])
+            ref_classif[0].append(2 if abs(proba_bot-proba_normal) < threshold else np.int32(classif[i]).item())
+            ref_classif[1].append((proba_bot, proba_normal))
 
         return ref_classif
 

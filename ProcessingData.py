@@ -59,6 +59,8 @@ class PreProcessingData:
         return self.le.inverse_transform(target)
     
     def getData(self):
+        # print(self.df_data.values[0])
+        # print(self.df_target[0])
         return self.df_data.values,self.df_target
     
     def __LabelBalance(self,df,reduce_factor=1):
