@@ -7,15 +7,19 @@ from pymongo import MongoClient
 import pymongo
 
 def get_database():
-    CONNECTION_STRING = "mongodb://localhost:27017/"
-    client = MongoClient(CONNECTION_STRING)
-    return client["pfc"]
+    # CONNECTION_STRING = "mongodb://localhost:27017/"
+    # client = MongoClient(CONNECTION_STRING)
+    client = pymongo.MongoClient("mongodb://ebcyberdef:ebcyberdef2022@cluster0-shard-00-00.uvqpv.mongodb.net:27017,cluster0-shard-00-01.uvqpv.mongodb.net:27017,cluster0-shard-00-02.uvqpv.mongodb.net:27017/?ssl=true&replicaSet=atlas-b7wx87-shard-0&authSource=admin&retryWrites=true&w=majority")
+    return client["server_db"]
+    # return client["pfc"]
 
 
 app = Sanic("hello_example")
 refereeEvaluate = RefereeFunctions()
 db = get_database()
-collection = db["myCollection"]
+collection = db["logs"]
+
+predict_translate = {0: "bot", 1: "normal", 2: "suspicious"}
 
 @app.route("/")
 async def test(request):
@@ -26,7 +30,7 @@ async def predictReferee(request):
   data = request.json
   flow = [[data["Dur"],data["sTos"],data["dTos"],data["TotPkts"],data["TotBytes"],data["SrcBytes"],data["Proto_tcp"],data["Proto_udp"],data["Dir_->"],data["Dir_<->"]]]
   result = refereeEvaluate.RefereePredict(flow)
-  data["RefereePrediction"] = result[0][0]
+  data["RefereePrediction"] = predict_translate[result[0][0]]
   data["ProbaBot"] = result[1][0][0]
   data["ProbaNormal"] = result[1][0][1]
   collection.insert_one(data)
